@@ -1,0 +1,36 @@
+# Logical
+
+departments
+-
+dept_no Pk FK -< dept_manager.dept_no VARCHAR   
+dept_name VARCHAR   
+
+dept_emp
+-
+emp_no FK >- employees.emp_no INTEGER
+dept_no FK >- departments.dept_no VARCHAR   
+
+dept_manager
+-
+dept_no PK VARCHAR   
+emp_no PK INTEGER FK >- employees.emp_no
+
+employees
+-
+emp_no PK INTEGER      
+emp_title_id VARCHAR   
+birth_date VARCHAR   
+first_name VARCHAR   
+last_name VARCHAR   
+sex VARCHAR   
+hire_date VARCHAR   
+
+salaries
+-
+emp_no FK - dept_manager.emp_no INTEGER      
+salary INTEGER      
+
+titles
+-
+title_id FK -< employees.emp_title_id VARCHAR   
+title VARCHAR   
